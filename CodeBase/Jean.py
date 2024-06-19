@@ -9,5 +9,4 @@ def get_clases(arreglo_1):
         for j in range(i + 1, len(clases)):
             if clases[i] > clases[j]:
                 clases[i], clases[j] = clases[j], clases[i]
-    
     return clases
