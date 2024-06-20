@@ -17,9 +17,7 @@ def frecAc(frec):
         ultVal += fAc
     return frecAc
 
-
 import math
-
 def clases_groped(datos):
     datos.sort()
     minVal = datos[0]
@@ -43,9 +41,9 @@ def clases_groped(datos):
         limSup = i*anchoClase
         limInf = limSup-anchoClase
         mrkClase = (limSup + limInf)/2
-        limsSup.append(limSup)
-        limsInf.append(limInf)
-        mrksClases.append(mrkClase)
+        limsSup.append(round(limSup, 3))
+        limsInf.append(round(limInf, 3))
+        mrksClases.append(round(mrkClase, 3))
     clases = list(range(1,numClases+1))
     return clases, limsInf, limsSup, mrksClases
 
@@ -59,3 +57,11 @@ def faGrouped(limSup, limInf, datos):
                 break
 
     return fa
+    
+def generateGroupedData(datos):
+    clases, limsInf, limsSup, mrksClases = clases_groped(datos)
+    fa = faGrouped(limsSup, limsInf, datos)
+    fr = frecRel(fa)
+    frAc = frecAc(fr)
+
+    return clases, limsInf, limsSup, mrksClases, fa, fr, frAc
