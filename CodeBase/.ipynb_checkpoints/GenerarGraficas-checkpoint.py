@@ -60,7 +60,7 @@ def generatePieChart(marcasClase, fa, fr, colores=colors):
 
 # POLÍGONO DE FRECUENCIAS
 def createFrequencyPolygon(marcasClase, fr, colores=colors):
-    plt.figure(figsize = (8, 4))
+    plt.figure(figsize = (15, 5))
     valores_ref_eje = list(range(1, len(marcasClase) + 1))
     datos_x = [0] + valores_ref_eje + [valores_ref_eje[-1] + 1]
     datos_y = [0] + fr + [0]
@@ -84,7 +84,7 @@ def createFrequencyPolygon(marcasClase, fr, colores=colors):
 
 # OJIVA
 def createOjiva(marcasClase, frAcum, colores=colors):
-    plt.figure(figsize = (8, 4))
+    plt.figure(figsize = (15, 5))
     valores_ref_eje = list(range(1, len(marcasClase) + 1))
     datos_x = [0] + valores_ref_eje
     datos_y = [0] + frAcum
