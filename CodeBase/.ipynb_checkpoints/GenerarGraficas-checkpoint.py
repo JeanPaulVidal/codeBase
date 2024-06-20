@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 print("Setup terminado")
+colors = ["#20BEFF","#1F77B4","#72C3DC","#D6DBDF","#5D6D7E","#1C2833","#F8F9F9"]
 
 # HISTOGRAMA
-def createHistogram(marcasClase, fa, colores):
+def createHistogram(marcasClase, fa, colores=colors):
     plt.figure(figsize = (8, 4))
     valores_ref_eje = list(range(1, len(marcasClase) + 1))
     plt.bar(valores_ref_eje, fa,
@@ -16,7 +17,7 @@ def createHistogram(marcasClase, fa, colores):
     plt.show()
 
 # DIAGRAMA DE BARRAS
-def createBarDiagram(marcasClase, fa, colores):
+def createBarDiagram(marcasClase, fa, colores=colors):
     plt.figure(figsize = (8, 4)) 
     valores_ref_eje = list(range(1, len(marcasClase) + 1))
     plt.barh(valores_ref_eje, fa,
@@ -32,7 +33,7 @@ def createBarDiagram(marcasClase, fa, colores):
     plt.show() 
 
 # GRAFICA DE PASTEL
-def generatePieChart(marcasClase, fa, fr, colores):
+def generatePieChart(marcasClase, fa, fr, colores=colors):
     if 'separaciones' in locals() or 'separaciones' in globals():
         if len(separaciones) == 0:
             print("The list exists and is empty.")
@@ -58,7 +59,7 @@ def generatePieChart(marcasClase, fa, fr, colores):
     plt.show()
 
 # POLÍGONO DE FRECUENCIAS
-def createFrequencyPolygon(marcasClase, fr, colores):
+def createFrequencyPolygon(marcasClase, fr, colores=colors):
     plt.figure(figsize = (8, 4))
     valores_ref_eje = list(range(1, len(marcasClase) + 1))
     datos_x = [0] + valores_ref_eje + [valores_ref_eje[-1] + 1]
@@ -82,7 +83,7 @@ def createFrequencyPolygon(marcasClase, fr, colores):
     plt.show() 
 
 # OJIVA
-def createOjiva(marcasClase, frAcum, colores):
+def createOjiva(marcasClase, frAcum, colores=colors):
     plt.figure(figsize = (8, 4))
     valores_ref_eje = list(range(1, len(marcasClase) + 1))
     datos_x = [0] + valores_ref_eje
@@ -106,7 +107,6 @@ def createOjiva(marcasClase, frAcum, colores):
     plt.show()
 
 
-colors = ["#20BEFF","#1F77B4","#72C3DC","#D6DBDF","#5D6D7E","#1C2833","#F8F9F9"]
 def displayCharts(marcasClase, fa, fr, frAcum, colores=colors):
     createHistogram(marcasClase, fa, colores)
     createBarDiagram(marcasClase, fa, colores)
