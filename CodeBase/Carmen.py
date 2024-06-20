@@ -1,3 +1,4 @@
+# Clases y Frecuencia Absoluta
 def frec_abs(datos_entrada):
     datos_entrada.sort()
     clases, fa_absoluta = [], []
@@ -8,5 +9,4 @@ def frec_abs(datos_entrada):
         else:        
             idx = clases.index(elemento)        
             fa_absoluta[idx] += 1
-
     return clases, fa_absoluta  

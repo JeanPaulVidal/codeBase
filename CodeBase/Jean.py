@@ -1,4 +1,4 @@
-# CLASES ORDENADAS
+# Clases ordenadas
 def get_clases(arreglo_1):
     clases = []
     for elemento in arreglo_1:
