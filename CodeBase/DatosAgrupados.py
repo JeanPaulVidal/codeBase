@@ -31,19 +31,21 @@ def clases_groped(datos):
     
     rango = maxVal - minVal
     numClases = 1 + 3.3 * math.log10(len(datos))
-    numClases = int(numClases)
+    numClases = round(numClases)
     anchoClase = rango / numClases
 
     limsInf = []
     limsSup = []
     mrksClases = []
+    limInf = minVal
+    limSup = minVal+anchoClase
     for i in range(1,numClases+1):
-        limSup = i*anchoClase
-        limInf = limSup-anchoClase
         mrkClase = (limSup + limInf)/2
         limsSup.append(round(limSup, 3))
         limsInf.append(round(limInf, 3))
         mrksClases.append(round(mrkClase, 3))
+        limInf = limSup
+        limSup = limInf+anchoClase
     clases = list(range(1,numClases+1))
     return clases, limsInf, limsSup, mrksClases
 
