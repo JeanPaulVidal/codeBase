@@ -35,5 +35,4 @@ def generateQualitativeData(lstDatos):
         frecAbsAc.append(fa+ultFa)
         ultFr += fr
         ultFa += fa
-        
     return [clase, frecAbs, frecAbsAc, frecRel, frecRelAc]

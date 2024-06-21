@@ -53,13 +53,11 @@ def faGrouped(limSup, limInf, datos):
     for dato in datos:
         for j in range(0, len(limInf)):
             # Para crear la otra distribucion se cambian las contidiones
-            #if j == 0:
             if j == len(limInf)-1:
                 if limInf[j] <= dato <= limSup[j]:
                     fa[j] += 1
                     break
             else:
-                #if limInf[j] < dato <= limSup[j]:
                 if limInf[j] <= dato < limSup[j]:
                     fa[j] += 1
                     break
